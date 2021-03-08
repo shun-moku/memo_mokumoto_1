@@ -1,0 +1,102 @@
+body {
+  background-color: tomato;
+}
+
+.header_bar{
+  /* display: inline-block;
+  display: flex;
+  justify-content: space-around; */
+}
+
+.user_nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.contents {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+
+.content_post {
+  box-sizing: border-box;
+  background-color: chocolate;
+  margin: 3px;
+  justify-content: center;
+  width: 32%;
+  word-wrap: break-word;
+  overflow: scroll;
+  height: 25vh;
+}
+
+
+@media (max-width:1200px){
+  .content_post {
+    box-sizing: border-box;
+    background-color: chocolate;
+    margin: 3px;
+    justify-content: center;
+    width: 49%;
+    word-wrap: break-word;
+    overflow: scroll;
+    height: 25vh;
+  }
+}
+
+
+
+@media (max-width:700px){
+  .content_post {
+    box-sizing: border-box;
+    background-color: chocolate;
+    margin: 3px;
+    justify-content: center;
+    width: 100%;
+    word-wrap: break-word;
+    overflow: scroll;
+    height: 25vh;
+  }
+}
+
+
+
+
+.contents {
+  background-color: rgb(146, 146, 223);
+}
+
+
+
+
+
+/* 新規投稿 */
+
+
+.container {
+  width: 90%;
+}
+
+input[type="text"],
+textarea {
+width: 100%;
+}
+
+
+
+.url {
+  align-items: center;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  width: 80%;
+}
+
+/* div[data-check="true"] {
+  background-color: white;
+} */
+
+/* .copybtn {
+  user-select: none;
+} */

@@ -1,0 +1,14 @@
+<% if note.user.id == current_user.id%>
+  <div class="content_post" data-id=<%= note.id %> data-check=<%= note.checked %>>
+    <div class="more">
+      <%= link_to '削除', note_path(note.id), method: :delete %>
+      <%= check_box_tag :sample1 %>
+      <%= label_tag :sample1, "覚えた" %> 
+      <%= note.updated_at %>
+    </div>
+    <p><%= simple_format(note.memo) %></p>
+    <span class="url">
+    <%= link_to note.url, note.url, target: :_blank, rel: "noopener noreferrer" %>
+    </span>
+  </div>
+<% end %>

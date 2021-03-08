@@ -1,0 +1,5 @@
+<div class="contents">
+  <% @notes.each do |note| %>
+    <%= render partial: "note", locals: { note: note } %>
+  <% end %>
+</div>

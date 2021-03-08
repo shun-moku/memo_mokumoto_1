@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Donforget</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="header_bar">
+        <h1 class="grid-6"><a href="/">Donforget</a></h1>
+        <% if user_signed_in? %>
+          <div class="user_nav grid-6">
+            <span>現在ログイン中：<%= current_user.name %>
+              <ul class="user__info">
+                <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+              </ul>
+            </span>
+          </div>
+        <% else %>
+          <div class="grid-6">
+            <%= link_to "ログイン", new_user_session_path, class: "post" %>
+            <%= link_to "新規登録", new_user_registration_path, class: "post" %>
+          </div>
+        <% end %>
+        <div class="user_nav">
+          <%= link_to "投稿する", new_note_path, class: :post %>
+          <%= link_to "all",   root_path, class: :post%>
+          <%= link_to "phase1", phase1_notes_path, class: :post%>
+          <%= link_to "phase2", phase2_notes_path, class: :post%>
+          <%= link_to "phase3", phase3_notes_path, class: :post%>
+        </div>
+      </div>
+    </header>
+    <%= yield %>
+  </body>
+</html>

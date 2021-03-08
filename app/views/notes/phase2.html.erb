@@ -1,0 +1,7 @@
+<div class="contents">
+  <% @notes.each do |note| %>
+    <%if Time.current - note.updated_at > 30 && Time.current - note.created_at < 604800*4  %>
+      <%= render partial: "note", locals: { note: note } %>
+    <% end %>
+  <% end %>
+</div>
