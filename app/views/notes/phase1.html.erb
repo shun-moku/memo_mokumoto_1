@@ -7,7 +7,7 @@
 </div>
 
 <div class="border">
-   
+   1時間以内に未復習のメモ
 </div>
 
 <div class="contents">
@@ -22,11 +22,21 @@
 5時間以内に未復習のメモ
 </div>
 
-
-
 <div class="contents">
   <% @notes.each do |note| %>
     <%if Time.current - note.updated_at > 18000 && Time.current - note.created_at < 604800*4 %>
+      <%= render partial: "note", locals: { note: note } %>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="border">
+1日以内に未復習のメモ
+</div>
+
+<div class="contents">
+  <% @notes.each do |note| %>
+    <%if Time.current - note.updated_at > 86400 && Time.current - note.created_at < 604800*4 %>
       <%= render partial: "note", locals: { note: note } %>
     <% end %>
   <% end %>
