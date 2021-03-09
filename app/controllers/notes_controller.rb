@@ -38,10 +38,6 @@ before_action :authenticate_user!
 
   def phase1
   end
-  def phase2
-  end
-  def phase3
-  end
   
   private
   def note_params
