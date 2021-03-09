@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-before_action :set_notes, only: [:index, :phase1, :phase2, :phase3]
+before_action :set_notes, only: [:index, :phase1]
 before_action :authenticate_user!
   def index
   end
