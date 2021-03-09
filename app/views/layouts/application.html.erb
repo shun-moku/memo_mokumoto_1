@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Donforget</title>
+    <title>Memo</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -13,7 +13,7 @@
   <body>
     <header class="header">
       <div class="header_bar">
-        <h1 class="grid-6"><a href="/">Donforget</a></h1>
+        <h1 class="grid-6"><a href="/">Memo</a></h1>
         <% if user_signed_in? %>
           <div class="user_nav grid-6">
             <span>現在ログイン中：<%= current_user.name %>
