@@ -4,7 +4,14 @@
       <%= link_to '削除', note_path(note.id), method: :delete %>
       <%= check_box_tag :sample1 %>
       <%= label_tag :sample1, "覚えた" %> 
-      <%= note.updated_at.to_s(:datetime_jp) %>
+      <%= note.updated_at.to_s(:datetime_jp) %></br>
+      <% if Time.current - note.updated_at > 3600 %>
+        <% zikan = Time.current - note.updated_at %>
+        <% hours = (zikan/3600).to_i %>
+        <% minutes = ((zikan%3600)/60).to_i %>
+        <% seconds = minutes % 60 %>
+        <%= "#{hours}時間 #{minutes}分 #{seconds}秒　" %>
+      <% end %>
     </div>
     <p><%= simple_format(note.memo) %></p>
     <span class="url">
