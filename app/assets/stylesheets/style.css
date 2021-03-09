@@ -93,9 +93,9 @@ width: 100%;
   width: 80%;
 }
 
-/* div[data-check="true"] {
-  background-color: white;
-} */
+div[data-check="true"] {
+/* display: none; */
+}
 
 /* .copybtn {
   user-select: none;
