@@ -16,7 +16,7 @@ function showClock2() {
   var nowMin  = set2fig( nowTime.getMinutes() );
   var nowSec  = set2fig( nowTime.getSeconds() );
   var msg = "現在時刻は、" + nowHour + ":" + nowMin + ":" + nowSec + " です。";
-  document.getElementById("RealtimeClockArea2").innerHTML = msg;
+  document.getElementById("RealtimeClockArea").innerHTML = msg;
   refresh();
 }
 
