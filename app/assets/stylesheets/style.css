@@ -1,7 +1,10 @@
 body {
   background-color: tomato;
 }
-
+.border {
+  color: blueviolet;
+  background-color:black;
+}
 .header_bar{
   /* display: inline-block;
   display: flex;
