@@ -21,6 +21,10 @@ body {
   justify-content: space-around;
 }
 
+p {
+  white-space : pre;
+}
+
 .content_post {
   box-sizing: border-box;
   background-color: chocolate;
