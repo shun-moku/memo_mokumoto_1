@@ -13,7 +13,7 @@
         <%= "#{hours.to_i}時間 #{minutes.to_i}分 #{seconds.to_i}秒 " %>
       <% end %>
     </div>
-    <%= safe_join(note.memo.split("\n"), tag(:br)) %>
+    <p><%= safe_join(note.memo.split("\n"), tag(:br)) %></p>
     <span class="url">
     <%= link_to note.url, note.url, target: :_blank, rel: "noopener noreferrer" %>
     </span>
