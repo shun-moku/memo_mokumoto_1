@@ -2,8 +2,10 @@ body {
   background-color: tomato;
 }
 .border {
+  font-style: italic;
   color: blueviolet;
   background-color:black;
+  font-size: 3vh;
 }
 
 
