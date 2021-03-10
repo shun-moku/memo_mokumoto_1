@@ -29,20 +29,21 @@ body {
   margin: 3px;
   justify-content: center;
   width: 32%;
-  word-wrap: break-word;
+  /* word-wrap: break-word; */
+  white-space: nowrap;
   overflow: scroll;
-  height: 25vh;
+  /* height: 25vh; */
 }
 
 
-@media (max-width:1200px){
+@media (max-width:1400px){
   .content_post {
     box-sizing: border-box;
     background-color: chocolate;
     margin: 3px;
     justify-content: center;
     width: 49%;
-    word-wrap: break-word;
+    /* word-wrap: break-word; */
     overflow: scroll;
     height: 25vh;
   }
@@ -57,7 +58,7 @@ body {
     margin: 3px;
     justify-content: center;
     width: 100%;
-    word-wrap: break-word;
+    /* word-wrap: break-word; */
     overflow: scroll;
     height: 25vh;
   }
