@@ -1,4 +1,5 @@
-<div class="border" id="RealtimeClockArea">
+
+<div class="border">
 1日以内に未復習のメモ
 </div>
 
@@ -6,6 +7,10 @@
   <% @notes.each do |note| %>
     <%if Time.current - note.updated_at > 86400 && Time.current - note.created_at < 604800*4 %>
       <%= render partial: "note", locals: { note: note } %>
+    <% else %>
+    you have nothing to memorize
+      復習後12時間経過したら表示されます
+      <% break %>
     <% end %>
   <% end %>
 </div>
