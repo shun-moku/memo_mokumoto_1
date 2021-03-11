@@ -4,13 +4,14 @@
 </div>
 
 <div class="contents">
+  <% num = 0 %>
   <% @notes.each do |note| %>
     <%if Time.current - note.updated_at > 604800 && Time.current - note.created_at < 604800*4 %>
       <%= render partial: "note", locals: { note: note } %>
-    <% else %>
-      <p>you have nothing to memorize</br>復習後1週間経過したら表示されます</p>
-      <% break %>
     <% end %>
+  <% end %>
+  <% if num == 0%>
+    <p>you have nothing to memorize</br>復習後1週間経過したら表示されます</p>
   <% end %>
 </div>
 
@@ -19,13 +20,14 @@
 </div>
 
 <div class="contents">
+  <% num = 0 %> 
   <% @notes.each do |note| %>
     <%if Time.current - note.updated_at > 86400 && Time.current - note.created_at < 604800*4 %>
       <%= render partial: "note", locals: { note: note } %>
-    <% else %>
-      <p>you have nothing to memorize</br>復習後24時間経過したら表示されます</p>
-      <% break %>
     <% end %>
+  <% end %>
+  <% if num == 0%>
+    <p>you have nothing to memorize</br>復習後24時間経過したら表示されます</p>
   <% end %>
 </div>
 
@@ -35,10 +37,14 @@
 
 
 <div class="contents">
+  <% num = 0 %>
   <% @notes.each do |note| %>
     <%if Time.current - note.updated_at > 18000 && Time.current - note.created_at < 604800*4 %>
       <%= render partial: "note", locals: { note: note } %>
     <% end %>
+  <% end %>
+  <% if num == 0%>
+    <p>you have nothing to memorize</br>復習後5時間経過したら表示されます</p>
   <% end %>
 </div>
 
@@ -47,9 +53,14 @@
 </div>
 
 <div class="contents">
+  <% num = 0 %>
   <% @notes.each do |note| %>
-    <%if Time.current - note.updated_at > 360 && Time.current - note.created_at < 604800*4 %>
+    <%if Time.current - note.updated_at > 36 && Time.current - note.created_at < 604800*4 %>
       <%= render partial: "note", locals: { note: note } %>
+      <% num = num + 1 %>
     <% end %>
+  <% end %>
+  <% if num == 0%>
+    <p>you have nothing to memorize</br>復習後1時間経過したら表示されます</p>
   <% end %>
 </div>
