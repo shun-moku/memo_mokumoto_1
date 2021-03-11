@@ -38,9 +38,6 @@
   <% @notes.each do |note| %>
     <%if Time.current - note.updated_at > 18000 && Time.current - note.created_at < 604800*4 %>
       <%= render partial: "note", locals: { note: note } %>
-    <% else %>
-      <p>you have nothing to memorize</br>復習後5時間経過したら表示されます</p>
-      <% break %>
     <% end %>
   <% end %>
 </div>
