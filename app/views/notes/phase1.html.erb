@@ -1,6 +1,21 @@
 
 <div class="border">
-1日以内に未復習のメモ
+1週間以内に未復習のメモ
+</div>
+
+<div class="contents">
+  <% @notes.each do |note| %>
+    <%if Time.current - note.updated_at > 604800 && Time.current - note.created_at < 604800*4 %>
+      <%= render partial: "note", locals: { note: note } %>
+    <% else %>
+      <p>you have nothing to memorize</br>復習後1週間経過したら表示されます</p>
+      <% break %>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="border">
+24時間以内に未復習のメモ
 </div>
 
 <div class="contents">
@@ -15,14 +30,15 @@
 </div>
 
 <div class="border">
-5時間以内に未復習のメモ
+   5時間以内に未復習のメモ
 </div>
+
 
 <div class="contents">
   <% @notes.each do |note| %>
     <%if Time.current - note.updated_at > 18000 && Time.current - note.created_at < 604800*4 %>
       <%= render partial: "note", locals: { note: note } %>
-    <% elsif note.nil? %>
+    <% else %>
       <p>you have nothing to memorize</br>復習後5時間経過したら表示されます</p>
       <% break %>
     <% end %>
@@ -33,30 +49,10 @@
    1時間以内に未復習のメモ
 </div>
 
-
 <div class="contents">
   <% @notes.each do |note| %>
-    <%if Time.current - note.updated_at > 3600 && Time.current - note.created_at < 604800*4 %>
+    <%if Time.current - note.updated_at > 360 && Time.current - note.created_at < 604800*4 %>
       <%= render partial: "note", locals: { note: note } %>
-    <% elsif note.nil? %>
-      <p>you have nothing to memorize</br>復習後1時間経過したら表示されます</p>
-      <% break %>
-    <% end %>
-  <% end %>
-</div>
-
-<div class="border">
-   10秒以内に未復習のメモ
-</div>
-
-<div class="contents">
-  <% @notes.each do |note| %>
-    <%if Time.current - note.updated_at > 10 && Time.current - note.created_at < 604800*4 %>
-      <%= render partial: "note", locals: { note: note } %>
-    <% elsif note.nil? %>
-      you have nothing to memorize
-      復習後10秒間経過したら表示されます
-      <% break %>
     <% end %>
   <% end %>
 </div>
