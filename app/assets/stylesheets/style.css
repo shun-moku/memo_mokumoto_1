@@ -97,7 +97,7 @@ width: 100%;
 }
 
 div[data-check="true"] {
-  /* background-color: brown; */
+  /* display: none; */
 }
 
 /* .copybtn {
