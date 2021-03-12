@@ -12,11 +12,13 @@ function set2fig(num) {
 
 function showClock2() {
   var nowTime = new Date();
+  var tags = JSON.parse(document.getElementById('up_time').dataset.json);
+  var remain_time = Math.round((nowTime.getTime() - tags*1000)/1000)
   var nowHour = set2fig( nowTime.getHours() );
   var nowMin  = set2fig( nowTime.getMinutes() );
   var nowSec  = set2fig( nowTime.getSeconds() );
   var msg = "現在時刻は、" + nowHour + ":" + nowMin + ":" + nowSec + " です。";
-  document.getElementById("RealtimeClockArea").innerHTML = msg;
+  document.getElementById("RealtimeClockArea").innerHTML = tags + msg + remain_time + "a" + nowTime.getTime() + "a" + tags*1000;
   refresh();
 }
 
