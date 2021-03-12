@@ -37,6 +37,7 @@ before_action :authenticate_user!
   end
 
   def phase1
+    @note_1 = Note.includes(:user).order(updated_at: :ASC).first
   end
   
   private
