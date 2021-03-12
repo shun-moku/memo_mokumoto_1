@@ -1,6 +1,7 @@
 <div id="RealtimeClockArea"></div>
+<div id="count_down" data-json="<%= @note_1.updated_at.to_f.to_json %>"></div>
 <div class="border">
-1週間以内に未復習のメモ
+1週間以内に未復習のメモ(復習後1週間経過したら表示されます)
 </div>
 
 <div class="contents">
@@ -12,7 +13,7 @@
     <% end %>
   <% end %>
   <% if num == 0%>
-    <p>you have nothing to memorize</br>復習後1週間経過したら表示されます</p>
+    
   <% end %>
 </div>
 
@@ -60,7 +61,7 @@
   <% @notes.each do |note| %>
     <%if Time.current - note.updated_at > 36 && Time.current - note.created_at < 604800*4 %>
       <%= render partial: "note", locals: { note: note } %>
-    <div id="up_time" data-json="<%= note.updated_at.to_f.to_json %>" ></div>
+      <div id="up_time" data-json="<%= note.updated_at.to_f.to_json %>" ></div>
       <% num = num + 1 %>
     <% end %>
   <% end %>
