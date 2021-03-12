@@ -1,4 +1,4 @@
-
+<div id="RealtimeClockArea"></div>
 <div class="border">
 1週間以内に未復習のメモ
 </div>
@@ -8,6 +8,7 @@
   <% @notes.each do |note| %>
     <%if Time.current - note.updated_at > 604800 && Time.current - note.created_at < 604800*4 %>
       <%= render partial: "note", locals: { note: note } %>
+      <% num = num + 1 %>
     <% end %>
   <% end %>
   <% if num == 0%>
@@ -24,6 +25,7 @@
   <% @notes.each do |note| %>
     <%if Time.current - note.updated_at > 86400 && Time.current - note.created_at < 604800*4 %>
       <%= render partial: "note", locals: { note: note } %>
+      <% num = num + 1 %>
     <% end %>
   <% end %>
   <% if num == 0%>
@@ -41,6 +43,7 @@
   <% @notes.each do |note| %>
     <%if Time.current - note.updated_at > 18000 && Time.current - note.created_at < 604800*4 %>
       <%= render partial: "note", locals: { note: note } %>
+      <% num = num + 1 %>
     <% end %>
   <% end %>
   <% if num == 0%>
@@ -55,8 +58,9 @@
 <div class="contents">
   <% num = 0 %>
   <% @notes.each do |note| %>
-    <%if Time.current - note.updated_at > 3600 && Time.current - note.created_at < 604800*4 %>
+    <%if Time.current - note.updated_at > 36 && Time.current - note.created_at < 604800*4 %>
       <%= render partial: "note", locals: { note: note } %>
+    <div id="up_time" data-json="<%= note.updated_at.to_f.to_json %>" ></div>
       <% num = num + 1 %>
     <% end %>
   <% end %>
