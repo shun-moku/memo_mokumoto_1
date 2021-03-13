@@ -1,7 +1,6 @@
 <div id="RealtimeClockArea"></div>
-<div id="count_down" data-json="<%= @note_1.updated_at.to_f.to_json %>"></div>
 <div class="border">
-1週間以内に未復習のメモ(復習後1週間経過したら表示されます)
+1週間以内に未復習のメモ(あと<span id="count_down_1" data-json="<%= @note_1.updated_at.to_f.to_json %>"></span> 秒後に再表示)
 </div>
 
 <div class="contents">
@@ -35,7 +34,7 @@
 </div>
 
 <div class="border">
-   5時間以内に未復習のメモ
+   5時間以内に未復習のメモ(あと<span id="count_down_2" data-json="<%= @note_1.updated_at.to_f.to_json %>"></span> 秒後に再表示)
 </div>
 
 
