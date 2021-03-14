@@ -6,9 +6,14 @@ function set2fig(num) {
   return ret;
 }
 
-// setTimeout(function () {
-//   location.reload();
-// }, 1500);
+function seconds2(num) {
+  var timeD = Math.floor(num / (24 * 60 * 60));
+  var timeH = Math.floor(num % (24 * 60 * 60) / (60 * 60));
+  var timeM = Math.floor(num % (24 * 60 * 60) % (60 * 60) / 60);
+  var timeS = num % (24 * 60 * 60) % (60 * 60) % 60;
+  var timeDMS = timeD + '日' + timeH + '時間' + timeM + '分' + timeS + '秒';
+  return timeDMS
+}
 
 function showClock2() {
   var nowTime = new Date();
@@ -22,24 +27,24 @@ function showClock2() {
   var count_down_2 = Math.round(86400 - (nowTime.getTime()/1000 -count))
   var count_down_3 = Math.round(18000 - (nowTime.getTime()/1000 -count))
   var count_down_4 = Math.round(360 - (nowTime.getTime()/1000 -count))
-
+ 
   var msg = "現在時刻は、" + nowHour + ":" + nowMin + ":" + nowSec + " です。";
   document.getElementById("up_time").innerHTML = tags + msg + remain_time + "a" + nowTime.getTime() + "a" + tags*1000 + "a" + count;
 
   if (count_down_1 > 0) {
-  document.getElementById("count_down_1").innerHTML = count_down_1
+  document.getElementById("count_down_1").innerHTML = seconds2(count_down_1)
   }
-  
+
   if (count_down_2 > 0) {
     document.getElementById("count_down_2").innerHTML = count_down_2
   }
 
   if (count_down_3 > 0) {
-    document.getElementById("count_down_3").innerHTML = count_down_3
+    document.getElementById("count_down_3").innerHTML = "再表示まで" + count_down_3 + "秒"
   }
 
   if (count_down_4 > 0) {
-    document.getElementById("count_down_4").innerHTML = count_down_4
+    document.getElementById("count_down_4").innerHTML = "再表示まで" + count_down_4 + "秒"
   }
 
   
