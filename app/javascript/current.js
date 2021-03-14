@@ -22,7 +22,7 @@ function showClock2() {
   var nowSec  = set2fig( nowTime.getSeconds() );
   var msg = "現在時刻は、" + nowHour + ":" + nowMin + ":" + nowSec + " です。";
   document.getElementById("up_time").innerHTML = tags + msg + remain_time + "a" + nowTime.getTime() + "a" + tags*1000 + "a" + count;
-  document.getElementById("count_down_1").innerHTML = Math.round(86400 - (nowTime.getTime()/1000 -count))
+  document.getElementById("count_down_1").innerHTML = Math.round(604800 - (nowTime.getTime()/1000 -count))
   document.getElementById("count_down_2").innerHTML = Math.round(18000 - (nowTime.getTime()/1000 -count))
   // document.getElementById("count_down").innerHTML = 86400 - (nowTime.getTime() -count*1000)
   refresh();
