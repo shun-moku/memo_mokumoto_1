@@ -36,15 +36,15 @@ function showClock2() {
   }
 
   if (count_down_2 > 0) {
-    document.getElementById("count_down_2").innerHTML = count_down_2
+    document.getElementById("count_down_2").innerHTML = seconds2(count_down_2)
   }
 
   if (count_down_3 > 0) {
-    document.getElementById("count_down_3").innerHTML = "再表示まで" + count_down_3 + "秒"
+    document.getElementById("count_down_3").innerHTML = "再表示まで" + seconds2(count_down_3) + "秒"
   }
 
   if (count_down_4 > 0) {
-    document.getElementById("count_down_4").innerHTML = "再表示まで" + count_down_4 + "秒"
+    document.getElementById("count_down_4").innerHTML = "再表示まで" + seconds2(count_down_4) + "秒"
   }
 
   
