@@ -18,12 +18,30 @@ function showClock2() {
   var nowHour = set2fig( nowTime.getHours() );
   var nowMin  = set2fig( nowTime.getMinutes() );
   var nowSec  = set2fig( nowTime.getSeconds() );
+  var count_down_1 = Math.round(604800 - (nowTime.getTime()/1000 -count))
+  var count_down_2 = Math.round(86400 - (nowTime.getTime()/1000 -count))
+  var count_down_3 = Math.round(18000 - (nowTime.getTime()/1000 -count))
+  var count_down_4 = Math.round(360 - (nowTime.getTime()/1000 -count))
+
   var msg = "現在時刻は、" + nowHour + ":" + nowMin + ":" + nowSec + " です。";
   document.getElementById("up_time").innerHTML = tags + msg + remain_time + "a" + nowTime.getTime() + "a" + tags*1000 + "a" + count;
-  document.getElementById("count_down_1").innerHTML = Math.round(604800 - (nowTime.getTime()/1000 -count))
-  document.getElementById("count_down_2").innerHTML = Math.round(86400 - (nowTime.getTime()/1000 -count))
-  document.getElementById("count_down_3").innerHTML = Math.round(18000 - (nowTime.getTime()/1000 -count))
-  document.getElementById("count_down_4").innerHTML = Math.round(360 - (nowTime.getTime()/1000 -count))
+
+  if (count_down_1 > 0) {
+  document.getElementById("count_down_1").innerHTML = count_down_1
+  }
+  
+  if (count_down_2 > 0) {
+    document.getElementById("count_down_2").innerHTML = count_down_2
+  }
+
+  if (count_down_3 > 0) {
+    document.getElementById("count_down_3").innerHTML = count_down_3
+  }
+
+  if (count_down_4 > 0) {
+    document.getElementById("count_down_4").innerHTML = count_down_4
+  }
+
   
 
 
