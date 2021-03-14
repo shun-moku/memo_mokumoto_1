@@ -12,12 +12,11 @@
     <% end %>
   <% end %>
   <% if num == 0%>
-    
   <% end %>
 </div>
 
 <div class="border">
-24時間以内に未復習のメモ
+24時間以内に未復習のメモ(あと<span id="count_down_2" data-json="<%= @note_1.updated_at.to_f.to_json %>"></span> 秒後に再表示)
 </div>
 
 <div class="contents">
@@ -34,7 +33,7 @@
 </div>
 
 <div class="border">
-   5時間以内に未復習のメモ(あと<span id="count_down_2" data-json="<%= @note_1.updated_at.to_f.to_json %>"></span> 秒後に再表示)
+   5時間以内に未復習のメモ<span id="count_down_3" data-json="<%= @note_1.updated_at.to_f.to_json %>"></span>
 </div>
 
 
@@ -53,12 +52,13 @@
 
 <div class="border">
    1時間以内に未復習のメモ
+   <span id="count_down_4" data-json="<%= @note_1.updated_at.to_f.to_json %>"></span>
 </div>
 
 <div class="contents">
   <% num = 0 %>
   <% @notes.each do |note| %>
-    <%if Time.current - note.updated_at > 36 && Time.current - note.created_at < 604800*4 %>
+    <%if Time.current - note.updated_at > 360 && Time.current - note.created_at < 604800*4 %>
       <%= render partial: "note", locals: { note: note } %>
       <div id="up_time" data-json="<%= note.updated_at.to_f.to_json %>" ></div>
       <% num = num + 1 %>
