@@ -32,7 +32,7 @@ function showClock2() {
   document.getElementById("up_time").innerHTML = tags + msg + remain_time + "a" + nowTime.getTime() + "a" + tags*1000 + "a" + count;
 
   if (count_down_1 > 0) {
-  document.getElementById("count_down_1").innerHTML = "再表示まで" + seconds2(count_down_1)
+  document.getElementById("count_down_1").innerHTML = "再表示まで" + seconds2(count_down_1) + "秒"
   }
 
   if (count_down_2 > 0) {
