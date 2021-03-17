@@ -11,7 +11,7 @@ function seconds2(num) {
   var timeH = Math.floor(num % (24 * 60 * 60) / (60 * 60));
   var timeM = Math.floor(num % (24 * 60 * 60) % (60 * 60) / 60);
   var timeS = num % (24 * 60 * 60) % (60 * 60) % 60;
-  var timeDMS = timeD + '日' + timeH + '時間' + timeM + '分' + timeS + '秒';
+  var timeDMS = timeD + '日' + timeH + '時間' + timeM + '分' + timeS;
   return timeDMS
 }
 
@@ -36,15 +36,16 @@ function showClock2() {
   }
 
   if (count_down_2 > 0) {
-    document.getElementById("count_down_2").innerHTML = "再表示まで" + seconds2(count_down_2)
+    document.getElementById("count_down_2").innerHTML = "再表示まで" + seconds2(count_down_2) + "秒"
   }
 
   if (count_down_3 > 0) {
-    document.getElementById("count_down_3").innerHTML = "再表示まで" + seconds2(count_down_3)
+    document.getElementById("count_down_3").innerHTML = "再表示まで" + seconds2(count_down_3) + "秒"
   }
 
   if (count_down_4 > 0) {
-    document.getElementById("count_down_4").innerHTML = "再表示まで" + seconds2(count_down_4)
+    document.getElementById("count_down_4").innerHTML = "再表示まで" + seconds2(count_down_4) + "秒"
+  }
 
   
 
