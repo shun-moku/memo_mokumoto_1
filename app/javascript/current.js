@@ -27,6 +27,7 @@ function showClock2() {
   var count_down_2 = Math.round(86400 - (nowTime.getTime()/1000 -count))
   var count_down_3 = Math.round(18000 - (nowTime.getTime()/1000 -count))
   var count_down_4 = Math.round(360 - (nowTime.getTime()/1000 -count))
+  var count_down_4 = Math.round(60 - (nowTime.getTime()/1000 -count))
  
   var msg = "現在時刻は、" + nowHour + ":" + nowMin + ":" + nowSec + " です。";
   document.getElementById("up_time").innerHTML = tags + msg + remain_time + "a" + nowTime.getTime() + "a" + tags*1000 + "a" + count;
@@ -47,6 +48,9 @@ function showClock2() {
     document.getElementById("count_down_4").innerHTML = "再表示まで" + seconds2(count_down_4) + "秒"
   }
 
+  if (count_down_5 > 0) {
+    document.getElementById("count_down_4").innerHTML = "再表示まで" + seconds2(count_down_5) + "秒"
+  }
   
 
 
