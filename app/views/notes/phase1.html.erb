@@ -60,7 +60,7 @@
 <div class="contents">
   <% num = 0 %>
   <% @notes.each do |note| %>
-    <%if Time.current - note.updated_at > 360 && Time.current - note.created_at < 1800 %>
+    <%if Time.current - note.updated_at > 360 && Time.current - note.created_at < 604800*4 %>
       <%= render partial: "note", locals: { note: note } %>
       <% num = num + 1 %>
     <% end %>
@@ -71,7 +71,7 @@
 </div>
 
 <div class="border">
-1分以内に未復習のメモ<span id="count_down_5</span>
+1分以内に未復習のメモ<span id="count_down_5" ></span>
 </div>
 <div class="contents">
   <% num = 0 %>
