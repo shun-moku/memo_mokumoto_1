@@ -7,7 +7,7 @@
 <div class="contents">
   <% num = 0 %>
   <% @notes.each do |note| %>
-    <%if Time.current - note.updated_at > 604800 && Time.current - note.created_at < 604800*4 %>
+    <%if Time.current - note.updated_at > 604800 && Time.current - note.updated_at < 604800*4 %>
       <%= render partial: "note", locals: { note: note } %>
       <% num = num + 1 %>
     <% end %>
@@ -24,7 +24,7 @@
 <div class="contents">
   <% num = 0 %> 
   <% @notes.each do |note| %>
-    <%if Time.current - note.updated_at > 86400 && Time.current - note.created_at < 604800 %>
+    <%if Time.current - note.updated_at > 86400 && Time.current - note.updated_at < 604800 && Time.current - note.created_at < 604800 %>
       <%= render partial: "note", locals: { note: note } %>
       <% num = num + 1 %>
     <% end %>
@@ -40,7 +40,7 @@
 <div class="contents">
   <% num = 0 %>
   <% @notes.each do |note| %>
-    <%if Time.current - note.updated_at > 1800 && Time.current - note.created_at < 604800*4 %>
+    <%if Time.current - note.updated_at > 1800 && Time.current - note.updated_at < 864000 && Time.current - note.created_at < 604800*4 %>
       <%= render partial: "note", locals: { note: note } %>
       <% num = num + 1 %>
     <% end %>
@@ -53,11 +53,10 @@
 <div class="border">
    1時間以内に未復習のメモ<span id="count_down_4"></span>
 </div>
-
 <div class="contents">
   <% num = 0 %>
   <% @notes.each do |note| %>
-    <%if Time.current - note.updated_at > 360 && Time.current - note.created_at < 604800*4 %>
+    <%if Time.current - note.updated_at > 360 && Time.current - note.updated_at < 1800 && Time.current - note.created_at < 604800*4 %>
       <%= render partial: "note", locals: { note: note } %>
       <% num = num + 1 %>
     <% end %>
