@@ -35,19 +35,15 @@ function showClock2() {
   if (count_down_1 > 0) {
   document.getElementById("count_down_1").innerHTML = "再表示まで" + seconds2(count_down_1) 
   }
-
   if (count_down_2 > 0) {
     document.getElementById("count_down_2").innerHTML = "再表示まで" + seconds2(count_down_2)
   }
-
   if (count_down_3 > 0) {
     document.getElementById("count_down_3").innerHTML = "再表示まで" + seconds2(count_down_3)
   }
-
   if (count_down_4 > 0) {
     document.getElementById("count_down_4").innerHTML = "再表示まで" + seconds2(count_down_4)
   }
-
   if (count_down_5 > 0) {
     document.getElementById("count_down_4").innerHTML = "再表示まで" + seconds2(count_down_5) 
   }
