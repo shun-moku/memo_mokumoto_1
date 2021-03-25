@@ -55,7 +55,7 @@
 <div class="contents">
   <% num = 0 %>
   <% @notes.each do |note| %>
-    <%if Time.current - note.updated_at > 360 && Time.current - note.updated_at < 1800 && Time.current - note.created_at < 604800*4 %>
+    <%if Time.current - note.updated_at > 3600 && Time.current - note.updated_at < 1800 && Time.current - note.created_at < 604800*4 %>
       <%= render partial: "note", locals: { note: note } %>
       <% num = num + 1 %>
     <% end %>
