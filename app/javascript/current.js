@@ -45,7 +45,7 @@ function showClock2() {
     document.getElementById("count_down_4").innerHTML = "再表示まで" + seconds2(count_down_4)
   }
   if (count_down_5 > 0) {
-    document.getElementById("count_down_4").innerHTML = "再表示まで" + seconds2(count_down_5) 
+    document.getElementById("count_down_5").innerHTML = "再表示まで" + seconds2(count_down_5) 
   }
   
 
