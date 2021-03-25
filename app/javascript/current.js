@@ -26,8 +26,8 @@ function showClock2() {
   var count_down_1 = Math.round(604800 - (nowTime.getTime()/1000 -count))
   var count_down_2 = Math.round(86400 - (nowTime.getTime()/1000 -count))
   var count_down_3 = Math.round(18000 - (nowTime.getTime()/1000 -count))
-  var count_down_4 = Math.round(360 - (nowTime.getTime()/1000 -count))
-  var count_down_4 = Math.round(60 - (nowTime.getTime()/1000 -count))
+  var count_down_4 = Math.round(3600 - (nowTime.getTime()/1000 -count))
+  var count_down_5 = Math.round(60 - (nowTime.getTime()/1000 -count))
  
   var msg = "現在時刻は、" + nowHour + ":" + nowMin + ":" + nowSec + " です。";
   document.getElementById("up_time").innerHTML = tags + msg + remain_time + "a" + nowTime.getTime() + "a" + tags*1000 + "a" + count;
