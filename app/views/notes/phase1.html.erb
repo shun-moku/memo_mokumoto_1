@@ -14,10 +14,15 @@
   <% end %>
 </div>
 
-
 <div class="border">
-24時間以内に未復習のメモ <span id="count_down_2"></span>
+  <% @notes.each do |note| %>
+    <% if Time.current - note.updated_at > 86400 && Time.current - note.updated_at < 604800 %>
+      24時間以内に未復習のメモ <span id="count_down_2" data-json="<%= note.updated_at.to_f.to_json %>"></span>
+    <% end %>
+    <% break %>
+  <% end %>
 </div>
+
 <div class="contents">
   <% num = 0 %> 
   <% @notes.each do |note| %>
