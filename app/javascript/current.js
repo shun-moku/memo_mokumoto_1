@@ -19,12 +19,13 @@ function showClock2() {
   var nowTime = new Date();
   var tags = JSON.parse(document.getElementById('up_time').dataset.json);
   var count = JSON.parse(document.getElementById('count_down_1').dataset.json);
+  var count_2 = JSON.parse(document.getElementById('count_down_2').dataset.json);
   var remain_time = Math.round((nowTime.getTime() - tags*1000)/1000)
   var nowHour = set2fig( nowTime.getHours() );
   var nowMin  = set2fig( nowTime.getMinutes() );
   var nowSec  = set2fig( nowTime.getSeconds() );
   var count_down_1 = Math.round(604800 - (nowTime.getTime()/1000 -count))
-  var count_down_2 = Math.round(86400 - (nowTime.getTime()/1000 -count))
+  var count_down_2 = Math.round(86400 - (nowTime.getTime()/1000 -count_2))
   var count_down_3 = Math.round(18000 - (nowTime.getTime()/1000 -count))
   var count_down_4 = Math.round(3600 - (nowTime.getTime()/1000 -count))
   var count_down_5 = Math.round(60 - (nowTime.getTime()/1000 -count))
