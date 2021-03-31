@@ -11,7 +11,6 @@
         <% seconds = (zikan%3600)%60 %>
         <%= "最終復習時刻からの経過時間  #{hours.to_i}時間 #{minutes.to_i}分 #{seconds.to_i}秒 " %>
     </div>
-      <div id="up_time" data-json="<%= note.updated_at.to_f.to_json %>" ></div>
     <p><%= note.memo %></p>
     <span class="url">
     <%= link_to note.url, note.url, target: :_blank, rel: "noopener noreferrer" %>
