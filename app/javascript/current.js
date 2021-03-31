@@ -17,19 +17,19 @@ function seconds2(num) {
 
 function showClock2() {
   var nowTime = new Date();
-  var tags = JSON.parse(document.getElementById('up_time').dataset.json);
+  // var tags = JSON.parse(document.getElementById('up_time').dataset.json);
   var count = JSON.parse(document.getElementById('count_down_1').dataset.json);
-  var remain_time = Math.round((nowTime.getTime() - tags*1000)/1000)
-  var nowHour = set2fig( nowTime.getHours() );
-  var nowMin  = set2fig( nowTime.getMinutes() );
-  var nowSec  = set2fig( nowTime.getSeconds() );
+  // var remain_time = Math.round((nowTime.getTime() - tags*1000)/1000)
+  // var nowHour = set2fig( nowTime.getHours() );
+  // var nowMin  = set2fig( nowTime.getMinutes() );
+  // var nowSec  = set2fig( nowTime.getSeconds() );
   var count_down_1 = Math.round(604800 - (nowTime.getTime()/1000 -count))
   var count_down_2 = Math.round(86400 - (nowTime.getTime()/1000 -count))
   var count_down_3 = Math.round(18000 - (nowTime.getTime()/1000 -count))
   var count_down_4 = Math.round(3600 - (nowTime.getTime()/1000 -count))
+  var count_down_5 = Math.round(60 - (nowTime.getTime()/1000 -count))
  
   // var msg = "現在時刻は、" + nowHour + ":" + nowMin + ":" + nowSec + " です。";
-  // document.getElementById("up_time").innerHTML = tags + msg + remain_time + "a" + nowTime.getTime() + "a" + tags*1000 + "a" + count;
 
   if (count_down_1 > 0) {
   document.getElementById("count_down_1").innerHTML = "再表示まで" + seconds2(count_down_1) 
@@ -43,6 +43,11 @@ function showClock2() {
   if (count_down_4 > 0) {
     document.getElementById("count_down_4").innerHTML = "再表示まで" + seconds2(count_down_4)
   }
+  if (count_down_5 > 0) {
+    document.getElementById("count_down_5").innerHTML = "再表示まで" + seconds2(count_down_5) 
+  }
+  
+
 
   // document.getElementById("count_down").innerHTML = 86400 - (nowTime.getTime() -count*1000)
   refresh();

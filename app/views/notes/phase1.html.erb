@@ -63,3 +63,18 @@
   <% end %>
 </div>
 
+<div class="border">
+1分以内に未復習のメモ<span id="count_down_5" ></span>
+</div>
+<div class="contents">
+  <% num = 0 %>
+  <% @notes.each do |note| %>
+    <%if Time.current - note.updated_at > 60 && Time.current - note.updated_at < 3600 && Time.current - note.created_at < 604800*4 %>
+      <%= render partial: "note", locals: { note: note } %>
+      <% num = num + 1 %>
+    <% end %>
+  <% end %>
+  <% if num == 0%>
+    <p>復習後1週間経過したら表示されます</p>
+  <% end %>
+</div>
