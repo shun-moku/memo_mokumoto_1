@@ -18,7 +18,7 @@ function seconds2(num) {
 function showClock2() {
   var nowTime = new Date();
   // var tags = JSON.parse(document.getElementById('up_time').dataset.json);
-  var count = JSON.parse(document.getElementById('count_down_1').dataset.json);
+  var count = JSON.parse(document.getElementById('count_down').dataset.json);
   // var remain_time = Math.round((nowTime.getTime() - tags*1000)/1000)
   // var nowHour = set2fig( nowTime.getHours() );
   // var nowMin  = set2fig( nowTime.getMinutes() );
