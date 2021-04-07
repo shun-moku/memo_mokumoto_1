@@ -42,8 +42,6 @@ function showClock2() {
     document.getElementById("count_down_5").innerHTML = "再表示まで" + seconds2(count_down_5) 
   }
   
-
-
   // document.getElementById("count_down").innerHTML = 86400 - (nowTime.getTime() -count*1000)
   refresh();
 }
