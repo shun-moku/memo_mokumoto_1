@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
-before_action :set_notes, only: [:index, :phase1]
-before_action :authenticate_user!
+  before_action :set_notes, only: [:index, :phase1]
+  before_action :authenticate_user!
   def index
   end
 
@@ -19,14 +19,12 @@ before_action :authenticate_user!
 
   def destroy
     note = Note.find(params[:id])
-    if note.destroy
-      redirect_to root_path
-    end
+    redirect_to root_path if note.destroy
   end
 
   def checked
     note = Note.find(params[:id])
-    if note.checked 
+    if note.checked
       note.update(checked: false)
     else
       note.update(checked: true)
@@ -39,8 +37,9 @@ before_action :authenticate_user!
   def phase1
     @note_1 = Note.includes(:user).order(updated_at: :ASC).first
   end
-  
+
   private
+
   def note_params
     params.require(:note).permit(:memo, :url).merge(user_id: current_user.id)
   end
