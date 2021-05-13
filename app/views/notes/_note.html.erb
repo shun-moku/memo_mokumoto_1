@@ -12,6 +12,7 @@
         <%= "最終復習時刻からの経過時間  #{hours.to_i}時間 #{minutes.to_i}分 #{seconds.to_i}秒 " %>
     </div>
     <p><%= note.memo %></p>
+    <p><%= markdown(note.memo) %></p>
     <span class="url">
     <%= link_to note.url, note.url, target: :_blank, rel: "noopener noreferrer" %>
     </span>

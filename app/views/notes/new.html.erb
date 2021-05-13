@@ -7,3 +7,30 @@
     <% end %>
   </div>
 </div>
+
+
+
+
+<script type="text/javascript">
+  window.onload = function() {
+    new Vue({
+      el: '#editor',
+      data: {
+        input: '<%== j @note.memo %>',
+      },
+      filters: {
+        marked: marked,
+      },
+    });
+  };
+</script>
+
+  <%= form_for @note, :url => {:action => :create} do |f| %>
+    <div class="form-group">
+      <div id='editor'>
+        <textarea name="note[memo]" class="form-control" rows="20" v-model='input' debounce='50'></textarea>
+          <div v-html='input | marked'>
+          </div>
+      </div>
+    </div>
+  <% end %>
